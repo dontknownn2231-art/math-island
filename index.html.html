@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>數學冒險島｜十位個位魔法學院：第六版｜具體圖示與算式漸進教學</title>
+<style>
+:root{--navy:#193c59;--blue:#2a78ae;--orange:#d87b31;--green:#218266;--paper:#f3f8fc;--line:#b8d1e2}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--navy);font-family:"Microsoft JhengHei","Noto Sans TC",sans-serif;font-size:19px}main{max-width:980px;margin:0 auto;padding:15px}h1{font-size:clamp(27px,5vw,40px);margin:8px 0}h2{font-size:25px;margin:8px 0 18px}.subtitle{color:#4e7089}.card{background:white;border:2px solid #d1e3ed;border-radius:19px;margin:14px 0;padding:20px;box-shadow:0 3px 10px #183f5d0c}.hidden{display:none!important}button,select,input{font:inherit}button{border:0;border-radius:13px;padding:14px 20px;background:var(--blue);color:white;cursor:pointer;min-height:55px;font-weight:700}button:hover{filter:brightness(.95)}button:focus-visible,input:focus-visible,select:focus-visible{outline:4px solid #e6a333;outline-offset:3px}button:disabled{opacity:.44;cursor:not-allowed}.primary{background:var(--green)}.orange{background:#ae6a27}.quiet{background:#e4edf4;color:var(--navy)}.large{font-size:clamp(25px,4vw,36px);padding:22px;width:100%;border:5px solid #f5bf49;box-shadow:0 0 0 5px #fff2bc}.controls{display:flex;gap:9px;flex-wrap:wrap}.controls button{flex:1 1 180px}.layout{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:grid;gap:8px;margin-bottom:15px}input[type=text],select{border:2px solid var(--line);border-radius:10px;padding:12px;width:100%;background:white}input[type=checkbox]{width:22px;height:22px;vertical-align:middle}.notice{border-radius:14px;background:#fef4db;border:2px solid #f2d28e;padding:17px;font-size:24px;font-weight:750}.question{text-align:center;font-size:clamp(34px,6vw,55px);font-weight:900;padding:8px}.stage{font-weight:800;color:#276992}.stepinfo{margin:10px 0;color:#426379}.panel{border:2px solid var(--line);border-radius:13px;padding:12px;min-height:170px;background:#f7fbff}.tens-wrap,.ones-wrap{display:flex;flex-wrap:wrap;gap:5px;align-items:flex-end;min-height:78px;padding:10px 0}.ten{width:18px;height:76px;border-radius:4px;background:repeating-linear-gradient(to bottom,#347aa8 0px,#347aa8 6px,#a8d4ed 6px,#a8d4ed 8px);border:2px solid #2b658d}.ten.removed{background:#cbd2da;border:2px dashed #bb6252;opacity:.50;transform:scale(.85)}.one.removed{background:#bfcbd3;border:2px dashed #b35d4c;opacity:.55;transform:scale(.84)}.one{width:17px;height:17px;background:#f2a54e;border-radius:3px;border:1px solid #b77b2d}.subhead{font-weight:bold}.big-num{font-size:27px;font-weight:800}.hint{border-left:6px solid #e9a044;padding:13px;background:#fff4d9;border-radius:9px;min-height:62px}.answers{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}.answers button{font-size:31px;min-height:80px}.progress{display:flex;gap:5px}.dot{flex:1;text-align:center;border-radius:11px;padding:8px 1px;background:#e6edf2;font-size:14px}.dot.done{background:#bde8d8}.result{font-size:26px;font-weight:800;min-height:37px}.label{font-weight:750}.small{font-size:15px;color:#526d7b}.nowrap{white-space:nowrap}.scroll{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:15px}th,td{border:1px solid #b8cedb;padding:7px;text-align:left}th{background:#dcebf4}body.calm{--paper:#f0f0f0;--blue:#486d88;--orange:#ac793e}body.calm .card{box-shadow:none}body.calm .notice{background:#f9f7ef}.one.pick,.ten.pick{cursor:pointer;box-shadow:0 0 0 2px #bd6a21}.one.pick{width:31px;height:31px;border:3px solid #975813}.ten.pick{width:25px;height:90px}.one.pick:focus-visible,.ten.pick:focus-visible{outline:5px solid #ffe055;outline-offset:4px}.pick-count{font-size:28px;font-weight:900;color:#176b56;padding:14px 0}.pick-guide{font-size:23px;line-height:1.8}.picked{opacity:.25;filter:grayscale(1);pointer-events:none}#swapBtn{background:#a85d24}.ten.countable{width:31px;height:100px;cursor:pointer;transition:opacity .12s}.ten.counted{box-shadow:0 0 0 4px #319568;filter:brightness(1.08)}.count-guide{font-size:23px;line-height:1.8}.group-label{font-size:19px;font-weight:700;color:#295b83}.pill{display:inline-block;border-radius:99px;background:#e5f1fa;padding:5px 12px;font-size:15px;font-weight:700}@media(max-width:650px){.layout{grid-template-columns:1fr}.card{padding:13px}.answers button{font-size:24px}button{font-size:18px}}
+
+.visual-story{margin:12px 0;padding:15px;border:2px solid #a9c9de;border-radius:17px;background:#f9fcff}
+.visual-title{font-size:23px;font-weight:850;margin-bottom:9px}
+.visual-section{margin:13px 0}.visual-name{font-weight:800;font-size:18px;margin-bottom:7px}
+.visual-math{display:flex;align-items:center;flex-wrap:wrap;gap:12px}
+.visual-group{display:flex;flex-wrap:wrap;gap:5px;align-items:flex-end;max-width:100%}
+.visual-symbol{font-size:36px;font-weight:900;color:#144c76}
+.visual-small{font-size:16px;opacity:.85}
+.visual-group .ten{width:18px;height:66px}.visual-group .one{width:23px;height:23px}
+.visual-story .removed{filter:grayscale(1);opacity:.46;outline:2px dashed #9d6256}
+.visual-step{padding:10px;background:#e9f3fa;border-radius:9px;font-weight:750;margin-top:11px}
+.visual-story .newten{box-shadow:0 0 0 3px #dfb03d}
+
+/* V7: tablet landscape first; fixed learning canvas, no page-scrolling to find action */
+html,body{min-height:100%;}
+body.v7-active{height:100dvh;overflow:hidden;background:#eaf3fa}
+body.v7-active main{max-width:none;width:100%;height:calc(100dvh - 48px);padding:4px 9px;overflow:hidden}
+body.v7-active main>header{display:none}
+body.v7-active main>.card{margin:0}
+body.v7-active #settings,body.v7-active #complete{max-width:1100px;margin:8px auto;overflow:auto;max-height:calc(100dvh - 75px)}
+#v7bar{height:48px;display:flex;gap:8px;align-items:center;justify-content:space-between;padding:5px 12px;background:#173f5e;color:white;font-size:16px;font-weight:700}
+#v7bar button{min-height:35px;padding:5px 13px;font-size:15px;border-radius:8px}
+#v7bar .bar-controls{display:flex;gap:7px;align-items:center}
+body:not(.v7-active) #v7bar{display:none}
+body.v7-active #teacherPanel{display:none}
+body.v7-active.teacher-open #teacherPanel{display:block;position:absolute;z-index:50;inset:48px 0 0;overflow:auto;background:#f3f8fc;padding:16px}
+body.v7-active.teacher-open #play,body.v7-active.teacher-open #demo,body.v7-active.teacher-open #settings,body.v7-active.teacher-open #complete{visibility:hidden}
+body.v7-active #play{height:100%;max-height:100%;overflow:hidden;border-radius:12px;padding:7px 12px;display:grid;grid-template-rows:23px 18px 48px minmax(49px,auto) minmax(0,1fr) minmax(0,1.6fr) auto auto auto;gap:4px;align-content:stretch}
+body.v7-active #play.hidden{display:none!important}
+body.v7-active #map{overflow:hidden;white-space:nowrap;min-height:0;gap:3px}
+body.v7-active .dot{font-size:11px;padding:2px 4px;white-space:nowrap;flex:1 1 0;min-width:0;overflow:hidden;text-overflow:ellipsis}
+body.v7-active #stageTitle{font-size:13px;margin:0;white-space:nowrap;overflow:hidden}
+body.v7-active #questionText{padding:0;font-size:clamp(26px,4.5vw,42px);line-height:1.1}
+body.v7-active #instruction{font-size:clamp(17px,2.15vw,23px);padding:7px 13px;min-height:0;line-height:1.25;overflow:auto}
+body.v7-active #playVisual{display:none!important}
+body.v7-active #play>.layout{grid-template-columns:1fr 1fr!important;gap:9px;margin-top:0!important;min-height:0;overflow:hidden}
+body.v7-active #play .panel{min-height:0;overflow:auto;padding:6px 10px}
+body.v7-active #play .subhead{font-size:15px}
+body.v7-active #play .tens-wrap,body.v7-active #play .ones-wrap{min-height:0;max-height:100%;padding:3px 0;gap:4px;align-content:flex-start;overflow:auto}
+body.v7-active #play .ten{height:clamp(35px,7.5vh,63px);width:15px}
+body.v7-active #play .one{height:clamp(14px,2.35vh,19px);width:clamp(14px,2.35vh,19px)}
+body.v7-active #play .ten.pick,body.v7-active #play .ten.countable{height:clamp(43px,8vh,66px);width:clamp(25px,3.3vw,32px)}
+body.v7-active #play .one.pick{height:clamp(27px,3.8vh,34px);width:clamp(27px,3.8vh,34px)}
+body.v7-active #play .big-num{font-size:15px;line-height:1.2}
+body.v7-active #actionArea{min-height:0;max-height:100%;overflow:auto;margin:0!important;display:flex;flex-direction:column;justify-content:center;gap:3px}
+body.v7-active #actionArea .notice{font-size:clamp(15px,2vw,21px);padding:6px 10px;line-height:1.25;margin:0}
+body.v7-active #actionArea .answers{margin:0;gap:8px}
+body.v7-active #actionArea .answers button{min-height:clamp(43px,7vh,64px);font-size:clamp(22px,3vw,30px)}
+body.v7-active #actionArea .large{min-height:50px;font-size:clamp(20px,2.6vw,27px);padding:7px;margin:0}
+body.v7-active #actionArea .pick-guide,body.v7-active #actionArea .count-guide{font-size:18px;line-height:1.3}
+body.v7-active #actionArea p{margin:0}
+body.v7-active #adaptInfo{display:none!important}
+body.v7-active #feedback{min-height:0;font-size:18px;line-height:1.15}
+body.v7-active #hintText{min-height:0;max-height:54px;overflow:auto;font-size:16px;padding:5px 10px;line-height:1.24}
+body.v7-active #play>.controls{margin:0!important;flex-wrap:nowrap;gap:5px}
+body.v7-active #play>.controls button{flex:1 1 0;min-height:44px;font-size:16px;padding:6px;white-space:nowrap}
+body.v7-active #next{margin:0!important;min-height:52px;font-size:24px;padding:5px}
+body.v7-active #next.hidden{display:none!important}
+body.v7-active #demo{height:100%;overflow:hidden;padding:8px 14px;display:grid;gap:4px;grid-template-rows:30px 46px minmax(0,1.3fr) auto minmax(0,1.1fr) auto auto auto;align-content:stretch}
+body.v7-active #demo.hidden{display:none!important}
+body.v7-active #demoTitle{margin:0;font-size:20px}
+body.v7-active #demoEquation{font-size:36px;padding:0}
+body.v7-active #demoVisual{min-height:0;overflow:auto;font-size:15px}
+body.v7-active #demoMessage{font-size:clamp(17px,2vw,21px);line-height:1.2;padding:7px;max-height:70px;overflow:auto}
+body.v7-active #demo .layout{grid-template-columns:1fr 1fr;gap:9px;min-height:0}
+body.v7-active #demo .panel{min-height:0;overflow:auto;padding:7px}
+body.v7-active #demo .ten{height:55px}
+body.v7-active #demo .stepinfo,body.v7-active #demoProgress,body.v7-active #challengeWrap .small{display:none}
+body.v7-active #demoNext,body.v7-active #challenge{min-height:54px;padding:6px;font-size:22px;margin:0!important}
+body.v7-active #demo>.quiet{min-height:36px;padding:5px 10px;font-size:15px}
+body.v7-active #challengeWrap{margin:0!important}
+body.v7-active #settings .card{margin:4px}
+body.v7-active.projector{--blue:#155d9e;--green:#136e55}
+body.v7-active.projector #questionText{font-size:clamp(39px,5.5vw,64px)}
+body.v7-active.projector #play .ten{width:22px}
+body.v7-active.projector #play .one{height:21px;width:21px}
+body.v7-active.projector #instruction{font-size:clamp(22px,2.6vw,28px)}
+@media(max-height:690px) and (orientation:landscape){body.v7-active #play{grid-template-rows:17px 14px 40px minmax(43px,auto) minmax(0,1fr) minmax(0,1.4fr) auto auto auto;gap:2px}body.v7-active #play .panel{padding:4px}body.v7-active #hintText{max-height:40px}body.v7-active #play .ten{height:40px}body.v7-active #play .one.pick{width:27px;height:27px}}
+@media(orientation:portrait){body.v7-active main{overflow:auto}body.v7-active #play,body.v7-active #demo{height:auto;min-height:calc(100dvh - 68px);max-height:none;overflow:visible;display:block}body.v7-active #play>.layout,body.v7-active #demo>.layout{display:grid;grid-template-columns:1fr 1fr!important}body.v7-active #actionArea{overflow:visible}body.v7-active #play>*{margin-bottom:8px!important}body.v7-active #play .panel{max-height:180px}}
+
+/* V7.1: compact visible grouping within the same landscape student screen */
+.math-groups{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:3px 0;min-height:32px}
+.math-cluster{display:flex;flex-wrap:wrap;align-items:center;gap:3px;max-width:100%}
+.math-op{font-size:30px;font-weight:900;color:#154b76;line-height:1}
+.math-cluster .one{flex:0 0 auto}
+.math-cluster .ten{flex:0 0 auto}
+.math-partnote{font-size:14px;font-weight:700;color:#275f82;margin:2px 0}
+.math-ghost{opacity:.32;filter:grayscale(1)}
+.math-stagehint{font-size:14px;line-height:1.2;color:#315970;font-weight:700}
+body.v7-active #play .panel .math-groups{min-height:0;gap:5px;align-items:center}
+body.v7-active #play .panel .math-op{font-size:clamp(20px,3vw,28px)}
+body.v7-active #play .panel .math-stagehint{font-size:12px}
+body.v7-active #play .panel .math-partnote{font-size:12px}
+</style></head>
+<body class="v7-active"><div id="v7bar"><span>🏝️ 數學冒險島 V7</span><div class="bar-controls"><button type="button" id="v7tablet">📱 平板</button><button type="button" id="v7projector">🖥️ 投影</button><button type="button" id="v7teacher">⚙️ 教師專區</button></div></div><main>
+<header class="card"><h1>🏝️ 數學冒險島：十位個位魔法學院</h1><div class="subtitle">二位數加減法｜不進位・不退位・進位・退位｜五關適性練習｜分組加法・灰化減法・進退位交換</div></header>
+<section class="card" id="settings"><h2>⚙️ 教師設定</h2><div class="layout"><div><label class="field">學生代碼（請勿填真實姓名）<input type="text" id="student" maxlength="24" placeholder="如 S01"></label><label class="field">選擇練習級別<select id="level"><option value="sequence">完整分級（第1至第5關依序）</option><option value="mix">第5關｜進位加法＋退位減法混合挑戰</option><option value="add0">第1關｜不進位加法</option><option value="sub0">第2關｜不退位減法</option><option value="add1">第3關｜進位加法</option><option value="sub1">第4關｜退位減法</option></select></label></div><div><label class="field">正式題數<select id="count"><option value="4">基礎關每關1題＋第五關4題</option><option value="8">基礎關每關2題＋第五關4題</option><option value="12">基礎關每關3題＋第五關4題</option></select></label><label class="field">示範播放速度<select id="demoPace"><option value="manual" selected>自己按下一步（推薦）</option><option value="8">每步停留 8 秒</option><option value="12">每步停留 12 秒</option><option value="18">每步停留 18 秒</option></select></label><label><input id="voice" type="checkbox" checked> 自動語音朗讀（可隨時重播）</label><p><label><input id="calm" type="checkbox"> 低刺激配色</label></p><p class="small">選「完整分級」會完成四種基礎題型，再進入第五關4題自動調整；選單一關時，題數設定為該關題數（第五關固定4題）。示範題不計入紀錄。</p></div></div><button class="large primary" id="startBtn">▶️ 先看示範</button></section>
+<section class="card hidden" id="demo"><h2 id="demoTitle">👀 觀看本關示範</h2><div class="question" id="demoEquation">27 ＋ 15 ＝ 42</div><div id="demoVisual" class="visual-story" aria-label="分組與交換積木示範"></div><div id="demoMessage" class="notice">先看個位：7＋5＝12。</div><div class="layout"><div class="panel"><div class="subhead">十位：藍色長條</div><div id="demoTens" class="tens-wrap"></div></div><div class="panel"><div class="subhead">個位：橘色小方塊</div><div id="demoOnes" class="ones-wrap"></div></div></div><div class="stepinfo">示範可以自己按「下一步」慢慢看；看完按「⭐ 開始挑戰」。第五關會依答題表現調整下一題。</div><button class="large primary" id="demoNext" style="margin:12px 0">👉 我看懂了，下一步</button><p class="small" id="demoProgress" aria-live="polite"></p><button class="quiet" id="repeatDemo">↻ 再看一次示範</button><button class="quiet" id="demoVoice">🔊 重聽指令</button><div id="challengeWrap" class="hidden" style="margin-top:16px"><button class="large primary" id="challenge">⭐ 開始挑戰</button><p class="small">直接進入正式題目，不必先經過模仿關卡。</p></div></section>
+<section class="card hidden" id="play"><div id="map" class="progress"></div><p class="stage" id="stageTitle"></p><div class="question" id="questionText"></div><div class="notice" id="instruction" aria-live="polite"></div><div id="playVisual" class="visual-story" aria-label="加減運算積木圖示"></div><div class="layout" style="margin-top:14px"><div class="panel"><div class="subhead">🔵 十位（1長條＝10）</div><div id="tens" class="tens-wrap"></div><div class="big-num" id="tensNum"></div></div><div class="panel"><div class="subhead">🟧 個位（1方塊＝1）</div><div id="ones" class="ones-wrap"></div><div class="big-num" id="onesNum"></div></div></div><div id="actionArea" style="margin-top:14px"></div><div id="adaptInfo" class="pill hidden" aria-live="polite" style="margin-top:12px"></div><div class="result" id="feedback" aria-live="polite"></div><div class="hint" id="hintText">需要幫忙時，按下「💡 提示」。</div><div class="controls" style="margin-top:12px"><button class="quiet" id="hear">🔊 聽指令</button><button class="orange" id="hint">💡 提示</button><button class="quiet" id="help">🙋 教師協助一次</button></div><button id="next" class="large primary hidden" style="margin-top:15px">⭐ 下一題</button></section>
+<section class="card hidden" id="complete"><h2>🎉 完成數學冒險！</h2><div id="completeMsg" class="notice"></div><div class="controls" style="margin-top:14px"><button class="primary" id="exportEnd">📥 下載學習紀錄</button><button id="restart">↻ 再次練習</button></div></section>
+<section class="card" id="teacherPanel"><h2>📋 教師紀錄與教學建議</h2><p id="summary">尚未開始正式練習。</p><div class="controls"><button id="export">📥 匯出 CSV</button><button id="advice">📊 查看教學建議</button><button class="quiet" id="cluster">🧠 機器學習探索性分群</button><button class="quiet" id="clear">清除紀錄</button></div><p id="analysis" class="hint small" aria-live="polite">教師可由錯誤、提示與協助次數，判斷下一次要加強的步驟。K-means 分群為探索性功能，不代表學生能力分類或診斷。</p><div class="scroll" style="margin-top:15px"><table><thead><tr><th>代碼</th><th>關卡</th><th>題目</th><th>首答正確</th><th>答錯次數</th><th>提示次數</th><th>教師協助</th><th>交換操作錯誤</th><th>完成</th><th>挑戰難度</th><th>提示支援</th><th>個位拿走示範</th><th>個位提示次數</th></tr></thead><tbody id="rows"></tbody></table></div><p class="small">資料僅保留在本頁記憶體中，不上傳伺服器；離開頁面前請匯出 CSV。語音取決於裝置可用的繁體中文語音。示範、題庫與規則式提示不是生成式 AI；探索性 K-means 分群才使用機器學習演算法。</p></section>
+</main><script>
+"use strict";
+const $=id=>document.getElementById(id);
+const LEVELS={mix:{name:'混合進退位挑戰',op:'?',carry:true},add0:{name:'不進位加法',op:'+',carry:false},sub0:{name:'不退位減法',op:'−',carry:false},add1:{name:'進位加法',op:'+',carry:true},sub1:{name:'退位減法',op:'−',carry:true}};
+const examples={mix:[27,15],add0:[23,14],sub0:[54,21],add1:[27,15],sub1:[50,28]};
+let config={},taskKeys=[],idx=0,q=null,records=[],demoTimers=[],lastSpeech='',inDemo=false,mixCount=0,mixLastOp=null;
+function rand(a,b){return Math.floor(Math.random()*(b-a+1))+a;}
+function speak(t,force=false){lastSpeech=t;if(!force&&!config.voice)return;if(!('speechSynthesis' in window))return;window.speechSynthesis.cancel();const spokenText=String(t).replace(/[＋+]/g,'加').replace(/[−－–—-]/g,'減').replace(/＝/g,'等於');const u=new SpeechSynthesisUtterance(spokenText);u.lang='zh-TW';u.rate=.82;window.speechSynthesis.speak(u);}
+function say(t){$('instruction').textContent=t;speak(t);}
+function show(id){['settings','demo','play','complete'].forEach(k=>$(k).classList.toggle('hidden',k!==id));}
+function makeBlocks(element,count,type,removed=0){const el=$(element);el.replaceChildren();for(let i=0;i<count;i++){const b=document.createElement('span');b.className=type+(i<removed?' removed':'');b.setAttribute('aria-label',i<removed?(type==='one'?'準備拿走的1個一':'準備拿走的1個十'):(type==='one'?'1個一':'1個十'));el.append(b);}if(count===0){el.textContent='（0）';}}
+function setBlocks(t,o,demonstration=false,removed=0){makeBlocks(demonstration?'demoTens':'tens',t,'ten');makeBlocks(demonstration?'demoOnes':'ones',o,'one',removed);if(!demonstration){$('tensNum').textContent=t+' 個十';$('onesNum').textContent=removed?`${o} 個一，其中已拿走 ${removed} 個`:(o+' 個一');}}
+function stopDemo(){demoTimers.forEach(clearTimeout);demoTimers=[];inDemo=false;}
+const DEMOS={
+ mix:{equation:'27 ＋ 15＝42 ／ 42 − 17＝25',frames:[
+  {t:3,o:12,txt:'進位加法27＋15：原有2個十，增加1個十；個位7＋5＝12個一。',voice:'先看加法。原本有兩個十，再增加一個十。個位一共有十二個一。'},
+  {t:4,o:2,txt:'把10個一換成1個十。十位是2個十＋1個十＋進位1個十，共4個十；剩2個一。',voice:'十個一換成一個十。十位的長條是二加一再加一，一共四根。'},
+  {t:4,o:2,txt:'退位減法：42－17，原本4個十與2個一，個位不夠減。',voice:'再來是退位減法，四十二減十七，個位不夠減。'},
+  {t:3,o:12,txt:'把1個十拆成10個一：十位4→3根；個位2→12個；總數仍42。',voice:'把一個十換成十個一，十位少一根，個位多十個。'},
+  {t:3,o:12,removed:7,txt:'從12個一中拿走7個（灰色），還剩5個一。',voice:'十二個一，拿走七個一，留下五個一。'},
+  {t:3,o:5,txt:'個位剩5個一。再從3個十拿走1個十。',voice:'個位剩五個一。十位三個十，拿走一個十。'},
+  {t:2,o:5,txt:'剩2個十與5個一，所以42－17＝25。準備開始混合挑戰！',voice:'剩兩個十和五個一，答案二十五。準備開始混合挑戰。'}]},
+ add0:{equation:'23 ＋ 14 ＝ 37',frames:[
+  {t:3,o:7,txt:'第一步：3 加 4，得到 7 個一。',voice:'先算個位，三加四等於七，不用進位。'},
+  {t:3,o:7,txt:'第二步：2 個十加 1 個十，得到 3 個十。',voice:'再算十位，二加一等於三。'},
+  {t:3,o:7,txt:'答案：3 個十和 7 個一，就是 37。',voice:'答案是三十七。'}]},
+ sub0:{equation:'54 − 21 ＝ 33',frames:[
+  {t:5,o:4,txt:'第一步：54 有 5 個十、4 個一。',voice:'五十四，有五個十，四個一。'},
+  {t:3,o:3,txt:'第二步：個位 4 減 1＝3；十位 5 減 2＝3。',voice:'個位四減一等於三，十位五減二等於三，不用退位。'},
+  {t:3,o:3,txt:'答案：3 個十和 3 個一，就是 33。',voice:'答案是三十三。'}]},
+ add1:{equation:'27 ＋ 15 ＝ 42',frames:[
+  {t:2,o:7,txt:'先看27：有2個十（藍色長條）、7個一（橘色方塊）。',voice:'二十七，有兩個十、七個一。'},
+  {t:3,o:12,txt:'再加入15：多1個十、5個一；現在個位共有12個一。',voice:'再加入一個十和五個一，個位有十二個一。'},
+  {t:3,o:12,txt:'12個一滿10個，請準備把10個一換成1個十。',voice:'十二個一，滿十了。十個一可以換成一個十。'},
+  {t:4,o:2,txt:'換好後：原本2個十＋加進來1個十＋新換來1個十＝4個十；個位剩2個一。',voice:'原本兩個十，加進來一個十，再加上新換來一個十。請一根一根數，一，二，三，四。'},
+  {t:4,o:2,txt:'最後把積木換成數字：4個十、2個一，寫成42。',voice:'四個十和兩個一，就是四十二。'}]},
+ sub1:{equation:'50 − 28 ＝ 22',frames:[
+  {t:5,o:0,txt:'先看50－28。個位是0，0個一不夠拿走8個一。',voice:'五十減二十八。個位是零，零個一不夠拿走八個一。'},
+  {t:5,o:0,txt:'要跟5個十借1個十，換成10個一。請看十位少1根，個位增加10個。',voice:'要從五個十拿一個十，換成十個一。'},
+  {t:4,o:10,txt:'換好後，5個十變4個十；0個一變10個一。整個數還是50。',voice:'現在剩四個十，十個一。總數還是五十。'},
+  {t:4,o:10,removed:8,txt:'先拿走8個一（灰色），請用眼睛數一數剩下2個一。正式題可以親自點掉方塊。',voice:'十個一，要拿走八個一。正式挑戰時，請自己點掉八個方塊。'},
+  {t:4,o:2,txt:'個位10－8＝2；十位4個十拿走2個十，剩2個十。答案22。',voice:'個位剩兩個一，十位四個十拿走兩個十，剩兩個十，答案是二十二。'}]}
+};
+
+// 第六版：題型一致的視覺表徵，保留原有互動作答與教師紀錄。
+function visualTokens(n,type,grey=0,highlight=false){
+ const g=document.createElement('span');g.className='visual-group';
+ if(n===0){const z=document.createElement('span');z.textContent='0 個';z.className='visual-small';g.append(z)}
+ for(let i=0;i<n;i++){const e=document.createElement('span');e.className=type+(i<grey?' removed':'')+(highlight?' newten':'');g.append(e)}
+ return g;
+}
+function visualLine(root,label,g1,sign,g2,type,grey1=0,grey2=0,highlight2=false){
+ const section=document.createElement('div');section.className='visual-section';
+ const name=document.createElement('div');name.className='visual-name';name.textContent=label;section.append(name);
+ const row=document.createElement('div');row.className='visual-math';row.append(visualTokens(g1,type,grey1));
+ if(sign){const x=document.createElement('b');x.className='visual-symbol';x.textContent=sign;row.append(x);row.append(visualTokens(g2,type,grey2,highlight2))}
+ section.append(row);root.append(section);
+}
+function visualNote(root,msg){const el=document.createElement('div');el.className='visual-step';el.textContent=msg;root.append(el)}
+function paintVisual(rootId,item,stage){
+ const root=$(rootId);if(!root||!item)return;root.replaceChildren();
+ const A=item.a,B=item.b,ta=Math.floor(A/10),tb=Math.floor(B/10),oa=A%10,ob=B%10;
+ const add=item.op==='+';const carry=add?oa+ob>=10:oa<ob;
+ const title=document.createElement('div');title.className='visual-title';title.textContent=`${A} ${add?'＋':'－'} ${B}｜圖像操作`;root.append(title);
+ if(add){
+  const changed=['swap','tens','final','completed','afterSwap','afterCarry'].includes(stage);
+  visualLine(root,'十位：先分清兩個數量',ta,'＋',tb,'ten');
+  if(!carry||!changed){visualLine(root,'個位：兩組方塊中間有＋',oa,'＋',ob,'one');
+   visualNote(root,carry?`個位 ${oa}＋${ob}＝${oa+ob}，請看哪些10個一要交換。`:`個位 ${oa}＋${ob}＝${oa+ob}；再算十位 ${ta}＋${tb}。`);
+  }else{
+   visualLine(root,'進位：10個一變灰，表示已拿去交換',oa+ob,'','', 'one',10);
+   visualLine(root,'十位：原來的十＋加進來的十＋新換的1個十',ta+tb,'＋',1,'ten',0,0,true);
+   visualNote(root,`灰色10個一已換成1根長條；個位還有 ${oa+ob-10} 個一。十位算 ${ta}＋${tb}＋1。`);
+  }
+ }else{
+  const swapped=carry&&['removeOnes','ones','tens','tensEquation','final','completed','afterSwap','afterRemove'].includes(stage);
+  if(!swapped){visualLine(root,'原本十位：待會要拿走的十變灰',ta,'',0,'ten',carry?1:tb);
+    visualLine(root,'原本個位',oa,'',0,'one',carry?0:ob);
+    visualNote(root,carry?`個位 ${oa} 不夠減 ${ob}，先從 ${ta} 個十拿走1個十，換成10個一。`:`個位 ${oa}－${ob}；灰色代表準備減掉的積木。十位再算 ${ta}－${tb}。`);
+  }else{
+    visualLine(root,'十位：借走1根後，剩下的長條',ta-1,'',0,'ten',stage==='tens'||stage==='tensEquation'||stage==='final'?tb:0);
+    visualLine(root,'個位：原來的方塊＋借來的10個一',oa,'＋',10,'one');
+    visualLine(root,'個位合併後：灰色表示要減掉',oa+10,'',0,'one',ob);
+    visualNote(root,`借十後是 ${ta-1} 個十；個位 ${oa}＋10＝${oa+10}，拿走 ${ob} 個一，再算 ${ta-1}－${tb} 個十。`);
+  }
+ }
+}
+function demoVisual(){
+ let key=demonstratedFor==='mix'?'add1':demonstratedFor;
+ if(demonstratedFor==='mix'&&demoIndex>=2)key='sub1';
+ const pair=demonstratedFor==='mix'&&key==='sub1'?[42,17]:examples[key];
+ const d=LEVELS[key];
+ let phase='ones';
+ if(d.op==='−')phase=demoIndex>= (demonstratedFor==='mix'?3:2)?'afterSwap':'swap';
+ else if(d.carry)phase=demoIndex>= (demonstratedFor==='mix'?1:3)?'afterCarry':'ones';
+ paintVisual('demoVisual',{a:pair[0],b:pair[1],op:d.op},phase);
+}
+
+let demonstratedFor=null, demoFrames=[],demoIndex=0;
+function demoPresent(i){demoVisual();const f=demoFrames[i];setBlocks(f.t,f.o,true,f.removed||0);$('demoMessage').textContent=f.txt;$('demoProgress').textContent=`示範步驟 ${i+1} / ${demoFrames.length}`;speak(f.voice);}
+function demoAdvance(){if(demoIndex>=demoFrames.length-1)return;demoIndex++;demoPresent(demoIndex);if(demoIndex===demoFrames.length-1){inDemo=false;$('demoNext').classList.add('hidden');$('challengeWrap').classList.remove('hidden');speak('示範結束。準備好了，請按開始挑戰。');}}
+function demo(levelKey=taskKeys[idx]){
+ stopDemo();inDemo=true;demonstratedFor=levelKey;
+ const info=DEMOS[levelKey];demoFrames=info.frames;demoIndex=0;
+ $('demoTitle').textContent='👀 '+LEVELS[levelKey].name+'｜先看示範';
+ $('demoEquation').textContent=info.equation;
+ $('challengeWrap').classList.add('hidden');
+ $('demoNext').classList.remove('hidden');
+ $('challenge').textContent='⭐ 開始挑戰：'+LEVELS[levelKey].name;
+ show('demo');demoPresent(0);
+ const pace=config.demoPace;
+ if(pace!=='manual'){
+  const interval=Number(pace)*1000;
+  for(let k=1;k<demoFrames.length;k++)demoTimers.push(setTimeout(()=>demoAdvance(),interval*k));
+ }
+}
+function generate(key,useExample=false){const d=LEVELS[key];if(useExample){const [a,b]=examples[key];return {key,a,b};}for(let i=0;i<3000;i++){let a=rand(21,89),b=d.op==='+'?rand(10,89):rand(11,a-10),onesA=a%10,onesB=b%10; if(d.op==='+' && a+b>99)continue;if(d.op==='+' && (onesA+onesB>=10)!==d.carry)continue;if(d.op==='−' && (onesA<onesB)!==d.carry)continue;if(d.op==='−' && a-b<10)continue;return {key,a,b};}return generate(key,true);}
+function mixTier(){
+ // 使用最近兩題（優先第五關）的作答負荷決定下一題；資料不足時維持標準題。
+ const prior=records.filter(r=>r.student===config.student);
+ const recent=prior.slice(-2);
+ if(!recent.length)return 2;
+ const needs=recent.filter(r=>r.first==='否'||r.wrong>0||r.hints>=2||r.assists>0).length;
+ if(needs>=1)return 1;
+ if(recent.length>=2 && recent.every(r=>r.first==='是'&&r.wrong===0&&r.hints===0&&r.assists===0))return 3;
+ return 2;
+}
+function makeMix(){
+ const tier=mixTier();
+ // 兩種運算交替，保證混合包含進位加法和退位減法。
+ const key=mixLastOp==='add1'?'sub1':'add1';mixLastOp=key;
+ let base=generate(key);
+ for(let attempt=0;attempt<1500;attempt++){
+  const a=rand(tier===1?20:21,tier===1?49:89);
+  const b=rand(10,tier===1?29:89);
+  const aa=a%10,bb=b%10;
+  const valid=key==='add1'?(aa+bb>=10 && a+b<=99):(a>b && aa<bb && a-b>=10);
+  if(!valid)continue;
+  if(tier===1 && (a%10+b%10>12 || (key==='sub1' && a-b>39)))continue;
+  if(tier===3 && (key==='add1' ? a+b<60 : a-b<25))continue;
+  base={key,a,b};break;
+ }
+ const supported=tier===1?'加強提示':tier===2?'一般提示':'自主挑戰';
+ return {...base,isMix:true,tier,supported};
+}
+function prepare(item){const d=LEVELS[item.key],a=item.a,b=item.b;return {...item,...d,answer:d.op==='+'?a+b:a-b,phase:d.op==='−'&&d.carry?'swap':'ones',removed:0,removeActions:0,onesHints:0,tensHints:0,tenActions:0,tenRemoved:0,removing:false,removingTens:false,hint:0,wrong:0,assists:0,swapWrong:0,first:null,tries:0,swapped:false,countedTens:false,tenCount:0,completed:false};}
+function start(){stopDemo();mixCount=0;mixLastOp=null;config={student:$('student').value.trim()||'未填代碼',voice:$('voice').checked,count:Number($('count').value),level:$('level').value,demoPace:$('demoPace').value};document.body.classList.toggle('calm',$('calm').checked);taskKeys=[];const keys=['add0','sub0','add1','sub1'];if(config.level==='sequence'){for(let i=0;i<config.count;i++)taskKeys.push(keys[i%4]);for(let i=0;i<4;i++)taskKeys.push('mix');}else if(config.level==='mix'){for(let i=0;i<4;i++)taskKeys.push('mix');}else{for(let i=0;i<config.count;i++)taskKeys.push(config.level);}idx=0;demo(taskKeys[idx]);}
+function begin(){stopDemo();show('play');nextQuestion();}
+function nextQuestion(){const isMix=taskKeys[idx]==='mix';q=prepare(isMix?makeMix():generate(taskKeys[idx],idx<4 && config.level==='sequence'));q.isMix=isMix;q.name=isMix?'混合進退位挑戰｜'+q.name:q.name;$('feedback').textContent='';$('hintText').textContent=q.isMix&&q.tier===1?'🟠 基礎題：先看個位，必要時按「💡 提示」；答錯也會自動提供引導。':'需要幫忙時，按下「💡 提示」。';$('next').classList.add('hidden');render();}
+function renderMap(){const root=$('map');root.replaceChildren();taskKeys.forEach((key,i)=>{const s=document.createElement('span');s.className='dot '+(i<idx?'done':'');s.textContent=(i<idx?'⭐':'🏝️')+' '+(i+1)+' '+LEVELS[key].name;root.append(s);});}
+function render(){renderMap();paintVisual("playVisual",q,q.phase);$('adaptInfo').classList.toggle('hidden',!q.isMix);if(q.isMix){$('adaptInfo').textContent=`🏝️ 第五關｜${q.tier===1?'基礎':q.tier===2?'標準':'進階'}題・${q.supported}（依前面作答調整）`;}$('stageTitle').textContent=`第 ${idx+1} / ${taskKeys.length} 題｜${q.name}`;$('questionText').textContent=`${q.a} ${q.op} ${q.b} ＝ ？`;
+ const a1=q.a%10,b1=q.b%10,at=Math.floor(q.a/10),bt=Math.floor(q.b/10);
+ if(q.op==='+'){
+  if(q.phase==='ones'){setBlocks(at+bt,a1+b1);choose(`${a1} 加 ${b1} 是多少個一？`,a1+b1);}
+  else if(q.phase==='swap'){setBlocks(at+bt,a1+b1);swapUI('10 個一換成 1 個十','加法進位：滿十要交換！');}
+  else if(q.phase==='tens'){{setBlocks(at+bt+(q.carry?1:0),(a1+b1)%10);const extra=q.carry?1:0;choose(`剛才個位已算好。現在十位也用算式：${at}＋${bt}${extra?'＋1（進位）':''}＝？ 先自己試算，需要時再按提示。`,at+bt+extra);}}
+  else if(q.phase==='final'){setBlocks(Math.floor(q.answer/10),q.answer%10);choose('最後答案是多少？',q.answer);}
+ }else{
+  if(q.phase==='swap'){setBlocks(at,a1);swapUI('拆掉 1 根十位長條，換 10 個個位方塊',`退位減法：${q.a}減${q.b}，個位是${a1}，不夠減${b1}。需要從${at}個十拿1個十，換成10個一。`);}
+  else if(q.phase==='removeOnes'){renderRemoveOnes(at-1,a1+10,b1);}
+  else if(q.phase==='ones'){setBlocks(at-(q.carry?1:0),a1+(q.carry?10:0)- (q.carry?b1:0));choose(`${a1+(q.carry?10:0)} 減 ${b1} 是多少個一？`,a1+(q.carry?10:0)-b1);if(q.carry){$('feedback').textContent=`剛剛拿走了 ${b1} 個，還剩 ${a1+10-b1} 個一。`;}}
+  else if(q.phase==='tens'){if(q.carry){renderRemoveTens(at-1,bt,a1+10-b1);}else{setBlocks(at,a1-b1);choose(`剛才個位 ${a1}－${b1}＝${a1-b1}。現在十位也用減法：${at}－${bt}＝？ 請先自己試算。`,at-bt);}}
+  else if(q.phase==='tensEquation'){setBlocks(at-1,a1+10-b1);choose(`個位 ${a1+10}－${b1}＝${a1+10-b1}。借走1個十後，十位從${at}變成${at-1}，現在算 ${at-1}－${bt}＝？`,at-1-bt);}
+  else if(q.phase==='final'){setBlocks(Math.floor(q.answer/10),q.answer%10);choose('最後答案是多少？',q.answer);}
+ }
+ applyV71Visual();
+}
+
+// V7.1: 同一個平板畫面保留來源分組，進退位以灰色顯示交換／拿走。
+function groupedPanel(id,segments,kind,description){
+ const root=$(id);root.replaceChildren();
+ const row=document.createElement('div');row.className='math-groups';
+ for(let j=0;j<segments.length;j++){
+  const seg=segments[j];
+  if(j){let sym=document.createElement('span');sym.className='math-op';sym.textContent=seg.sign||'＋';row.append(sym);}
+  const group=document.createElement('div');group.className='math-cluster';
+  for(let i=0;i<seg.n;i++){
+   const item=document.createElement('span');item.className=kind+(seg.grey&&i<seg.grey?' removed math-ghost':'');
+   item.setAttribute('aria-label',seg.grey&&i<seg.grey?'已換掉或減掉的積木':kind==='ten'?'一個十':'一個一');
+   group.append(item);
+  }
+  if(!seg.n){let zero=document.createElement('span');zero.textContent='0';group.append(zero);}
+  row.append(group);
+ }
+ root.append(row);
+ const label=document.createElement('div');label.className='math-stagehint';label.textContent=description;root.append(label);
+}
+function applyV71Visual(){
+ if(!q)return;
+ const a=q.a%10,b=q.b%10,at=Math.floor(q.a/10),bt=Math.floor(q.b/10);
+ if(q.op==='+'){
+  if(q.phase==='ones'){
+   groupedPanel('ones',[{n:a},{n:b}], 'one',`${a}個一 ＋ ${b}個一，先分開看，再算共有幾個。`);
+   groupedPanel('tens',[{n:at},{n:bt}], 'ten',`${at}個十 ＋ ${bt}個十`);
+   $('onesNum').textContent=`${a}＋${b}＝？`;
+  }else if(q.phase==='swap'){
+   groupedPanel('ones',[{n:10,grey:10},{n:a+b-10}], 'one',`灰色10個一準備換成1個十，還剩${a+b-10}個一。`);
+   groupedPanel('tens',[{n:at},{n:bt}], 'ten',`原本${at}個十，加進${bt}個十；交換後還會增加1個十。`);
+   $('onesNum').textContent=`${a}＋${b}＝${a+b}；10個一換1個十`;
+  }else if(q.phase==='tens'){
+   groupedPanel('ones',q.carry?[{n:10,grey:10},{n:a+b-10}]:[{n:a},{n:b}],'one',q.carry?'灰色10個一已換成1個十，個位留下彩色方塊。':`${a}＋${b}個一`);
+   groupedPanel('tens',q.carry?[{n:at},{n:bt},{n:1}]:[{n:at},{n:bt}], 'ten',q.carry?`${at}＋${bt}＋1（進位）＝？`:`${at}＋${bt}＝？`);
+   $('tensNum').textContent=q.carry?`${at}＋${bt}＋1＝？`:`${at}＋${bt}＝？`;
+  }
+ }else{
+  if(q.phase==='swap'){
+   groupedPanel('tens',[{n:at,grey:1}], 'ten',`原本${at}個十；灰色1根要換成10個一。`);
+   groupedPanel('ones',[{n:a}], 'one',`原本個位${a}個一，不夠減${b}個一。`);
+  }else if(q.phase==='ones'&&!q.carry){
+   groupedPanel('tens',[{n:at,grey:bt}], 'ten',`灰色${bt}根代表要拿走的十。`);
+   groupedPanel('ones',[{n:a,grey:b}], 'one',`灰色${b}個代表要拿走的個位。`);
+  }else if(q.phase==='tens'&&!q.carry){
+   groupedPanel('tens',[{n:at,grey:bt}], 'ten',`${at}－${bt}＝？灰色表示減去。`);
+   $('tensNum').textContent=`${at}－${bt}＝？`;
+  }else if(q.carry&&q.phase==='tensEquation'){
+   groupedPanel('tens',[{n:at-1,grey:bt}], 'ten',`借走一個十後，${at-1}－${bt}＝？`);
+   $('tensNum').textContent=`${at-1}－${bt}＝？`;
+  }
+ }
+}
+
+function renderCountCarryTens(at,bt,ones){
+ const total=at+bt+1, area=$('actionArea'), root=$('tens');
+ area.replaceChildren();root.replaceChildren();makeBlocks('ones',ones,'one');
+ $('onesNum').textContent=ones+' 個一';
+ $('tensNum').textContent=`請依序點數十位長條：已數 ${q.tenCount} / ${total} 根`;
+ const intro=document.createElement('p');intro.className='notice count-guide';
+ intro.textContent=`👀 原本有 ${at} 根藍色長條，加進來 ${bt} 根，再加上進位換來的 1 根。先點長條數數看。`;
+ area.append(intro);
+ const label=document.createElement('p');label.className='group-label';
+ label.textContent=`原本 ${at} 根 ＋ 加入 ${bt} 根 ＋ 進位 1 根`;area.append(label);
+ for(let i=0;i<total;i++){
+  const b=document.createElement('button');b.type='button';
+  b.className='ten countable'+(i<q.tenCount?' counted':'');
+  b.setAttribute('aria-label',`第 ${i+1} 根十位長條，按一下數數`);
+  b.title=i<at?'原本的十位':i<at+bt?'第二個數加進來的十位':'進位換來的十位';
+  b.disabled=i!==q.tenCount;
+  b.onclick=()=>{
+   if(i!==q.tenCount)return;
+   q.tenCount++;
+   b.classList.add('counted');b.disabled=true;
+   $('tensNum').textContent=`已數 ${q.tenCount} / ${total} 根`;speak(`第${q.tenCount}根。`);
+   if(q.tenCount===total){
+    q.countedTens=true;
+    $('feedback').textContent=`數完了！共有${total}個十。`;
+    area.replaceChildren();
+    const p=document.createElement('p');p.className='notice';
+    p.textContent=`積木變算式：${at}＋${bt}＋1＝${total}（個十）。`;area.append(p);
+    const next=document.createElement('button');next.className='large primary';
+    next.textContent='✅ 我數完了，選十位答案';
+    next.onclick=()=>render();area.append(next);
+    speak(`數完了，一共有${total}根十位長條。請按我數完了。`);
+   }else{
+    const nextB=root.children[q.tenCount];if(nextB)nextB.disabled=false;
+   }
+  };root.append(b);
+ }
+ say(`先看藍色長條，一根代表十。原本${at}根，加進來${bt}根，進位又換來1根。請從左到右，一根一根點數。`);
+}
+function renderRemoveOnes(t,ones,remove){
+ const area=$('actionArea');area.replaceChildren();
+ const remaining=ones-q.removed;
+ makeBlocks('tens',t,'ten');
+ const root=$('ones');root.replaceChildren();
+ for(let i=0;i<ones;i++){
+  const b=document.createElement('button');b.type='button';
+  b.className='one pick'+(i<q.removed?' picked':'');
+  b.disabled=i<q.removed||q.removed>=remove;
+  b.setAttribute('aria-label',`第${i+1}個一，點一下拿走`);
+  b.title='點一下拿走1個一';
+  b.onclick=()=>{
+   if(q.removed>=remove)return;
+   b.classList.add('picked');b.disabled=true;
+   q.removed++;q.removeActions++;
+   $('onesNum').textContent=`已拿走 ${q.removed} 個，剩 ${ones-q.removed} 個一`;
+   $('feedback').textContent=`拿走 ${q.removed} 個一，還剩 ${ones-q.removed} 個一。`;
+   speak(`拿走第${q.removed}個。`);
+   if(q.removed>=remove){
+    area.replaceChildren();
+    const done=document.createElement('button');done.className='large primary';
+    done.textContent=`✅ 剩下 ${ones-remove} 個一，繼續`;
+    done.onclick=()=>{q.phase='ones';q.hint=0;render();};
+    area.append(done);
+    speak(`做得好，拿走${remove}個一，剩下${ones-remove}個一。請按繼續。`);
+   }
+  };
+  root.append(b);
+ }
+ $('tensNum').textContent=`${t} 個十`;
+ $('onesNum').textContent=`已拿走 ${q.removed} 個，剩 ${remaining} 個一`;
+ const tip=document.createElement('p');tip.className='notice pick-guide';
+ tip.textContent=`👆 請親自點掉 ${remove} 個橘色方塊。一次點一個。已拿走 ${q.removed} / ${remove} 個。`;
+ area.append(tip);
+ if(q.removed<remove){
+  const help=document.createElement('button');help.className='quiet';
+  help.textContent='🔊 再聽一次：點橘色方塊';
+  help.onclick=()=>speak(`請用手指或滑鼠，點橘色小方塊，一次點一個，一共拿走${remove}個。`,true);
+  area.append(help);
+ }
+ say(q.removed===0?`個位現在有${ones}個一。請親自點掉${remove}個橘色方塊。`:`已拿走${q.removed}個，還要再拿走${remove-q.removed}個。`);
+}
+function renderRemoveTens(total,remove,ones){
+ const area=$('actionArea');area.replaceChildren();
+ const root=$('tens');root.replaceChildren();
+ for(let i=0;i<total;i++){
+  const b=document.createElement('button');b.type='button';
+  b.className='ten pick'+(i<q.tenRemoved?' picked':'');
+  b.disabled=i<q.tenRemoved||q.tenRemoved>=remove;
+  b.setAttribute('aria-label',`第${i+1}個十，點一下拿走`);
+  b.title='點一下拿走1個十';
+  b.onclick=()=>{
+   if(q.tenRemoved>=remove)return;
+   b.classList.add('picked');b.disabled=true;
+   q.tenRemoved++;q.tenActions++;
+   $('tensNum').textContent=`已拿走 ${q.tenRemoved} 個十，剩 ${total-q.tenRemoved} 個十`;
+   $('feedback').textContent=`拿走 ${q.tenRemoved} 個十，還剩 ${total-q.tenRemoved} 個十。`;
+   speak(`拿走第${q.tenRemoved}個十。`);
+   if(q.tenRemoved>=remove){
+    area.replaceChildren();
+    const done=document.createElement('button');done.className='large primary';
+    done.textContent=`✅ 剩下 ${total-remove} 個十，繼續`;
+    done.onclick=()=>{q.phase='tensEquation';q.hint=0;render();};
+    area.append(done);
+    speak(`已經拿走${remove}個十。剩下${total-remove}個十。請按繼續。`);
+   }
+  };root.append(b);
+ }
+ makeBlocks('ones',ones,'one');
+ $('onesNum').textContent=ones+' 個一';
+ $('tensNum').textContent=`已拿走 ${q.tenRemoved} 個十，剩 ${total-q.tenRemoved} 個十`;
+ const tip=document.createElement('p');tip.className='notice pick-guide';
+ tip.textContent=`👆 再親自點掉 ${remove} 根藍色長條。已拿走 ${q.tenRemoved} / ${remove} 根。`;
+ area.append(tip);
+ say(`現在有${total}個十。請親自點掉${remove}根藍色長條，一次點一根。`);
+}
+function choiceOptions(correct){let items=[correct];for(let delta of [1,-1,10,-10,2,-2,11,-11]){let n=correct+delta;if(n>=0&&n<=99&&!items.includes(n)){items.push(n);if(items.length===(q&&q.isMix&&q.tier===1?2:3))break;}}return items.sort((a,b)=>a-b);}
+function choose(instruction,correct){say(instruction+'，請選一個答案。');const el=$('actionArea');el.replaceChildren();const choices=document.createElement('div');choices.className='answers';choiceOptions(correct).forEach(n=>{const btn=document.createElement('button');btn.textContent=n;btn.addEventListener('click',()=>answer(n,correct));choices.append(btn);});el.append(choices);}
+function swapUI(title,instruction){say(instruction);const root=$('actionArea');root.replaceChildren();const btn=document.createElement('button');btn.id='swapBtn';btn.className='large';btn.textContent='🔄 '+title;btn.addEventListener('click',()=>{q.swapped=true;q.phase=q.op==='+'?'tens':'removeOnes';q.hint=0;render();if(q.op==='−'){const oldT=Math.floor(q.a/10),oldO=q.a%10;speak(`十位由${oldT}根減少成${oldT-1}根，個位由${oldO}個增加為${oldO+10}個。`,false);}else{$('feedback').textContent='交換成功！請繼續。';}});root.append(btn);}
+function answer(n,correct){if(q.completed)return;q.tries++;if(q.first===null)q.first=n===correct;if(n!==correct){q.wrong++;$('feedback').textContent='還差一點，看看積木，再選一次。';if(q.isMix&&q.tier===1){hints();}else if(q.isMix&&q.wrong%2===0){hints();}speak('還差一點，可以按提示。');return;}q.hint=0;$('feedback').textContent='答對了！';if(q.phase==='ones'){q.phase=q.op==='+'&&q.carry?'swap':'tens';}else if(q.phase==='tens'||q.phase==='tensEquation')q.phase='final';else if(q.phase==='final'){finishQuestion();return;}render();}
+function hints(){if(!q||q.completed)return;q.hint++;q.totalHints=(q.totalHints||0)+1;let msg='';const a=q.a%10,b=q.b%10;
+ if(q.phase==='removeOnes'){q.onesHints++;msg=q.hint===1?'請用手指或滑鼠點橘色方塊，每點一下就拿走1個。':q.hint===2?`可以先想 10 減 ${b}，再加原本的 ${a} 個一。`:`${a+10} 減 ${b}，剩下 ${a+10-b} 個一。請自己點掉方塊。`;}
+ else if(q.phase==='swap')msg=q.op==='+'?'看個位有沒有滿10個？按中間大大的交換按鈕。':`個位是${a}，不夠減${b}。請從${Math.floor(q.a/10)}個十拿出1個十，換成10個一。`;
+ else if(q.phase==='ones')msg=q.op==='+'?`先看橘色方塊：${a}個一再加${b}個一。`:`先看橘色方塊：${a+(q.carry?10:0)}個一，拿走${b}個一。`;
+ else if(q.phase==='tens'||q.phase==='tensEquation'){
+  const ta=Math.floor(q.a/10),tb=Math.floor(q.b/10),extra=q.op==='+'&&q.carry?1:0;
+  const base=q.op==='−'&&q.carry?ta-1:ta;
+  const equation=q.op==='+'?`${ta}＋${tb}${extra?'＋1':''}`:`${base}－${tb}`;
+  const result=q.op==='+'?ta+tb+extra:base-tb;
+  q.tensHints++;
+  if(q.hint===1)msg=`提示一：十位跟個位一樣，用算式來算。${equation} 等於多少？`;
+  else if(q.hint===2){msg=`提示二：每根藍色長條代表1個十。${q.op==='+'?`原本${ta}根，加進${tb}根${extra?'，進位再多1根':''}`:`${q.carry?'借走1根後，':''}現在有${base}根，要拿走${tb}根`}。請指著長條一根一根數。`;const r=$('tens');r.replaceChildren();const total=q.op==='+'?result:base;for(let i=0;i<total;i++){const x=document.createElement('button');x.type='button';x.className='ten countable';x.setAttribute('aria-label',`第${i+1}根十位長條`);x.onclick=()=>{x.classList.toggle('counted');speak(`第${i+1}根`,true);};r.append(x);} $('tensNum').textContent=`${total} 根藍色長條（可以逐根點數）`;}
+  else msg=`提示三：${equation}＝${result}，所以十位寫${result}。`;
+ }
+ else msg=`先算十位與個位，再組成答案。${q.hint>=2?'答案可以用長條和方塊數量核對。':''}`;
+ if(q.hint>=2 && q.phase!=='swap'){if(q.phase==='ones')msg+=q.op==='+'?` ${a}＋${b}＝${a+b}。`:` ${a+(q.carry?10:0)}－${b}＝${a+(q.carry?10:0)-b}。`;else if(q.phase==='tens'||q.phase==='tensEquation')msg+=' 慢慢數，不急著看答案。';else msg+=` 目前答案是${q.answer}。`;}
+ $('hintText').textContent=msg;speak(msg);}
+function finishQuestion(){q.completed=true;records.push({student:config.student,level:q.name,question:`${q.a}${q.op}${q.b}=${q.answer}`,first:q.first?'是':'否',wrong:q.wrong,hints:q.totalHints||0,assists:q.assists,swapWrong:q.swapWrong,complete:'是',tier:q.isMix?({1:'基礎',2:'標準',3:'進階'}[q.tier]):'原分級',support:q.isMix?q.supported:'一般提示',removeActions:q.removeActions||0,onesHints:q.onesHints||0,tenActions:q.tenActions||0,tensHints:q.tensHints||0});$('actionArea').replaceChildren();$('feedback').textContent='🌟 完成這一關！';$('next').textContent=idx+1===taskKeys.length?'🏆 完成冒險':'⭐ 下一題';$('next').classList.remove('hidden');say('答對了！請按下面的大按鈕，繼續挑戰。');renderRecords();}
+function advance(){idx++;if(idx===taskKeys.length){show('complete');$('completeMsg').textContent=`已完成 ${taskKeys.length} 題！請老師查看學習紀錄與下一步教學建議。`;speak('恭喜完成數學冒險！');}else if(taskKeys[idx]!==taskKeys[idx-1]){demo(taskKeys[idx]);}else nextQuestion();}
+function renderRecords(){const root=$('rows');root.replaceChildren();records.forEach(r=>{let tr=document.createElement('tr');Object.values(r).forEach(v=>{const td=document.createElement('td');td.textContent=String(v);tr.append(td)});root.append(tr)});$('summary').textContent=`已完成 ${records.length} 題；目前學生代碼：${config.student||'尚未設定'}。`;
+}
+function exportCSV(){if(!records.length){alert('目前還沒有作答紀錄');return;}let columns=[['學生代碼','關卡','題目','首答正確','答錯次數','提示次數','教師協助','交換操作錯誤','完成','挑戰難度','提示支援','個位拿走示範','個位提示次數','十位拿走示範','十位提示次數'],...records.map(x=>Object.values(x))];let csv='\ufeff'+columns.map(row=>row.map(v=>{let s=String(v);if(/^[=+@\-\t\r]/.test(s))s="'"+s;return '"'+s.replaceAll('"','""')+'"';}).join(',')).join('\r\n');let url=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'})),a=document.createElement('a');a.href=url;a.download='MathIsland_AddSub_Records.csv';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);}
+function advice(){if(!records.length){$('analysis').textContent='尚未有學習資料，請先讓學生完成題目。';return;}const groups=Object.entries(LEVELS).map(([k,d])=>{let r=records.filter(x=>x.level===d.name||x.level.startsWith('混合進退位挑戰｜')&&k==='mix');if(!r.length)return null;let errors=r.reduce((s,x)=>s+x.wrong,0),hints=r.reduce((s,x)=>s+x.hints,0),assist=r.reduce((s,x)=>s+x.assists,0);return `${d.name}：${r.length}題，答錯${errors}次、提示${hints}次、教師協助${assist}次。${errors+hints+assist>0?'建議先回到積木示範，單獨練習該關的交換或計算步驟。':'目前可嘗試減少提示，觀察獨立完成情形。'}`;}).filter(Boolean);$('analysis').textContent='規則式教學建議（不是機器學習推論）：\n'+groups.join('\n');$('analysis').style.whiteSpace='pre-line';}
+function cluster(){if(records.length<6){$('analysis').textContent='機器學習分群需要至少6筆完成紀錄；目前資料不足，不產生分群結果。';return;}const xs=records.map(r=>[Math.min(r.wrong/5,1),Math.min(r.hints/5,1),Math.min(r.assists/5,1)]);const dist=(a,b)=>a.reduce((s,v,i)=>s+(v-b[i])**2,0);let max=-1,pair=[0,1];for(let i=0;i<xs.length;i++)for(let j=i+1;j<xs.length;j++){let d=dist(xs[i],xs[j]);if(d>max){max=d;pair=[i,j];}}if(max<1e-8){$('analysis').textContent='作答特徵沒有足夠差異，無法形成有意義的兩群；不強行解讀。';return;}let c=[xs[pair[0]].slice(),xs[pair[1]].slice()],labels=Array(xs.length).fill(0);for(let iter=0;iter<25;iter++){labels=xs.map(x=>dist(x,c[0])<=dist(x,c[1])?0:1);let counts=[0,0],sums=[[0,0,0],[0,0,0]];xs.forEach((x,i)=>{let k=labels[i];counts[k]++;x.forEach((v,j)=>sums[k][j]+=v)});if(counts.some(n=>n===0)){ $('analysis').textContent='分群結果不穩定（出現空群），不提供解讀。';return;}let nc=sums.map((v,k)=>v.map(a=>a/counts[k]));if(dist(nc[0],c[0])+dist(nc[1],c[1])<1e-9){c=nc;break;}c=nc;}let counts=[0,1].map(k=>labels.filter(x=>x===k).length);$('analysis').textContent=`裝置端 K-means（k=2）探索性結果：群1 ${counts[0]}題，群2 ${counts[1]}題。\n群1平均（答錯、提示、教師協助；每項以5為上限標準化）：${c[0].map(x=>x.toFixed(2)).join('／')}；群2：${c[1].map(x=>x.toFixed(2)).join('／')}。\n此分群的單位是「題次」而不是學生，僅供觀察不同作答負荷；不能推論學生能力、教學效果或自動升降難度。`; $('analysis').style.whiteSpace='pre-line';}
+$('demoNext').onclick=()=>{stopDemo();inDemo=true;demoAdvance();};$('startBtn').onclick=start;$('repeatDemo').onclick=()=>demo(taskKeys[idx]);$('demoVoice').onclick=()=>speak($('demoMessage').textContent,true);$('challenge').onclick=begin;$('hear').onclick=()=>speak($('instruction').textContent,true);$('hint').onclick=hints;$('help').onclick=()=>{if(q&&!q.completed){q.assists++;$('feedback').textContent=`已記錄教師協助 ${q.assists} 次`;}};$('next').onclick=advance;$('export').onclick=exportCSV;$('exportEnd').onclick=exportCSV;$('restart').onclick=()=>show('settings');$('advice').onclick=advice;$('cluster').onclick=cluster;$('clear').onclick=()=>{if(confirm('確定清除目前全部紀錄？請先匯出。')){records=[];renderRecords();$('analysis').textContent='紀錄已清空。';}};
+
+// V7 viewing modes are local display changes: original lesson engine retained.
+$('v7tablet').onclick=()=>{document.body.classList.remove('projector','teacher-open');};
+$('v7projector').onclick=()=>{document.body.classList.add('projector');document.body.classList.remove('teacher-open');};
+$('v7teacher').onclick=()=>{const opening=!document.body.classList.contains('teacher-open');document.body.classList.toggle('teacher-open',opening);$('v7teacher').textContent=opening?'⬅️ 返回學生畫面':'⚙️ 教師專區';};
+</script></body></html>
